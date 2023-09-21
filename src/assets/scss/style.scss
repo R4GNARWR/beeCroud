@@ -1,0 +1,92 @@
+@import "./vars.scss";
+
+.btn
+{
+    display: flex;
+    padding: 1.4rem 3.2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    &-primary
+    {
+        color: #FFF;
+        background: $primary-bg;
+        border-radius: 8px;
+        border: 1px solid $primary-bg;
+        outline: 0;
+        &:focus-visible,
+        &:hover,
+        &:active,
+        :not(.btn-check)+&:active,
+        &:first-child:active,
+        &.active,
+        &.show
+        {
+            border: 1px solid $primary-bg;
+            background-color: #FFFFFF !important;
+            color: $primary-bg;
+        }
+    }
+}
+.form-control
+{
+    &__wrap
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    padding: 1.4rem;
+    border-radius: 8px;
+    border: 1px solid $gray;
+    background: #F7F7F7;
+    color: $gray;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.5em;
+    &::placeholder
+    {
+        color: $gray;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+    &__errors
+    {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.6rem;
+        &-item
+        {
+            padding: 10px 0;
+            font-size: 1.6rem;
+            color: #c21010;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .btn
+    {
+        padding: 14px 32px;
+        font-size: 16px;
+    }
+    .form-control
+    {
+        padding: 14px;
+        font-size: 16px;
+        &::placeholder
+        {
+            font-size: 16px;
+        }
+        &__errors
+        {
+            &-item
+            {
+                font-size: 16px;
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+main
+{
+    position: relative;
+}
+.main
+{
+    &__background-img
+    {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40vw;
+        height: 100vh;
+        img
+        {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content
+    {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 3rem;
+        img
+        {
+            width: 49rem;
+            height: 23rem;
+            object-fit: contain;
+        }
+        &-text
+        {
+            color: #3C3C53;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 24px;
+        }
+        &-highlight-text
+        {
+            color: #3C3C53;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 28px;
+        }
+    }
+    &__form
+    {
+        &-input
+        {
+            display: flex;
+            column-gap: 2rem;
+        }
+        .btn
+        {
+            height: fit-content;
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .main
+    {
+        &__background-img
+        {
+            position: static;
+            height: 378px;
+            width: 100%;
+            img
+            {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__content
+        {
+            height: auto;
+            padding: 60px 20px 40px 20px;
+            img
+            {
+                width: 100%;
+                height: 156px;
+                object-fit: contain;
+            }
+            margin-top: -40px;
+            border-radius: 16px;
+            background-color: #FFFFFF;
+        }
+        &__form
+        {
+            &-input
+            {
+                flex-direction: column;
+                row-gap: 20px;
+                column-gap: initial;
+            }
+        }
+    }
+}
