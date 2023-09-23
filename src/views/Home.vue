@@ -57,7 +57,7 @@ export default {
     data() {
         return{
             emailInput: '',
-            showResultModal: true,
+            showResultModal: false,
         }
     },
     setup () {
