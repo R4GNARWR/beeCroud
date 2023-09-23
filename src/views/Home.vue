@@ -1,6 +1,5 @@
 
 <template>
-    <main>
         <section id="mainSection">
             <div class="main__background-img">
                 <img src="../assets/img/background-woman.png" alt="">
@@ -30,12 +29,20 @@
             
             
         </section>
-    </main>
+        <ModalBase class="modal-result" v-model="showResultModal">
+            <div class="modal-result__label">
+                Благодарим за ваш интерес к платформе
+            </div>
+            <div class="modal-result__text">
+                Ваша заявка отправлена
+            </div>
+        </ModalBase>
 </template>
 
 <script>
-import MainButton from "../components/UI/MainButton.vue";
+import MainButton from "../components/UI/MainButton.vue"
 import FormInput from '../components/UI/FormInput.vue'
+import ModalBase from '../components/UI/ModalBase.vue'
 
 import { useVuelidate } from '@vuelidate/core'
 import { helpers, required, email } from '@vuelidate/validators'
@@ -43,12 +50,14 @@ import { helpers, required, email } from '@vuelidate/validators'
 export default {
     components: {
         MainButton,
-        FormInput
+        FormInput,
+        ModalBase,
     },
 
     data() {
         return{
             emailInput: '',
+            showResultModal: true,
         }
     },
     setup () {
@@ -66,7 +75,11 @@ export default {
         async submitForm () {
             const isFormCorrect = await this.v$.$validate()
             // you can show some extra alert to the user or just leave the each field to show it's `$errors`.
-            if (!isFormCorrect) return
+            if (isFormCorrect) {
+
+                this.showResultModal = !this.showResultModal;
+                return
+            } 
             // actually submit form
         }
     },

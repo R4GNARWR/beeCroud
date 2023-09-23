@@ -102,3 +102,53 @@ main
         }
     }
 }
+
+
+
+.modal-result
+{
+    &__label
+    {
+        color: #3C3C53;
+        text-align: center;
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 3.2rem;
+        letter-spacing: -0.48px;
+    }
+    
+    &__text
+    {
+        margin-bottom: 3.2rem;
+        color: #8A8A9F;
+        text-align: center;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.7em;
+    }
+    .btn
+    {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .modal-result
+    {
+        &__label
+        {
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+        
+        &__text
+        {
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.5em;
+        }
+    }
+}
